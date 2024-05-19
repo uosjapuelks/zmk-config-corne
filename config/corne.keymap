@@ -34,14 +34,15 @@
                 compatible = "zmk,binding-macro";
                 #binding-cells = <0>;
                 wait-ms = <30>;
-                tap-ms <40>;
+                tap-ms = <40>;
                 bindings = <&kp LGUI &kp LCTRL &kp LALT>;
           };
+
           ctrl_alt: ctrl_alt{
                 compatible = "zmk,binding-macro";
                 #binding-cells = <0>;
                 wait-ms = <30>;
-                tap-ms <40>;
+                tap-ms = <40>;
                 bindings = <&kp LCTRL &kp LALT>;
           };
 
