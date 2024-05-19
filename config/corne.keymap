@@ -31,32 +31,22 @@
                 quick-tap-ms = <230>;
           };
 
-          rektangle: rektangle {
-                compatible = "zmk,binding-macro";
-                #binding-cells = <0>;
-                wait-ms = <30>;
-                tap-ms = <40>;
-                bindings = <&macro_press &kp LGUI &kp LCTRL &kp LALT>;
-          };
+          //  rektangle: rektangle {
+          //        compatible = "zmk,binding-macro";
+          //        #binding-cells = <0>;
+          //        wait-ms = <30>;
+          //        tap-ms = <40>;
+          //        bindings = <&macro_press &kp LGUI &kp LCTRL &kp LALT>;
+          //  };
 
-          ctrl_alt: ctrl_alt{
-                compatible = "zmk,binding-macro";
-                #binding-cells = <0>;
-                wait-ms = <30>;
-                tap-ms = <40>;
-                bindings = <&macro_press &kp LCTRL &kp LALT>;
-          };
+          //  ctrl_alt: ctrl_alt{
+          //        compatible = "zmk,binding-macro";
+          //        #binding-cells = <0>;
+          //        wait-ms = <30>;
+          //        tap-ms = <40>;
+          //        bindings = <&macro_press &kp LCTRL &kp LALT>;
+          //  };
 
-          displayt: displayt {
-                compatible = "zmk,behavior-hold-tap";
-                bindings = <&ctrl_alt>, <&kp>;
- 
-                #binding-cells = <2>;
-                tapping-term-ms = <230>;
-                flavor = "tap-preferred";
-                require-prior-idle-ms = <125>;
-                quick-tap-ms = <230>;
-          };
           td_mt: tap_dance_mod_tap {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
@@ -84,12 +74,12 @@
             compatible = "zmk,combos";
 
             display_move {
-                bindings = <&rektangle>;
+                bindings = <&kp LG(LC(LALT))>;
                 key-positions = < 36 37 38 >;
             };
         
             cycle_app {
-                bindings = <&displayt CTRL_ALT LG(GRAVE)>;
+                bindings = <&kp LC(LALT) LG(GRAVE)>;
                 key-positions = < 36 37 >;
             };
         
