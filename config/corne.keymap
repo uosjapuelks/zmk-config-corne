@@ -22,7 +22,6 @@
          behaviors {
           weak: weak {
                 compatible = "zmk,behavior-hold-tap";
-                label = "WEAK";
                 bindings = <&kp>, <&kp>;
  
                 #binding-cells = <2>;
@@ -50,7 +49,6 @@
 
           displayt: displayt {
                 compatible = "zmk,behavior-hold-tap";
-                label = "DISPLAYCTRL";
                 bindings = <&ctrl_alt>, <&kp>;
  
                 #binding-cells = <2>;
