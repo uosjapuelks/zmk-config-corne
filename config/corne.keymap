@@ -37,7 +37,7 @@
                 #binding-cells = <0>;
                 wait-ms = <30>;
                 tap-ms = <40>;
-                bindings = <&kp LGUI &kp LCTRL &kp LALT>;
+                bindings = <&macro_press &kp LGUI &kp LCTRL &kp LALT>;
           };
 
           ctrl_alt: ctrl_alt{
@@ -45,7 +45,7 @@
                 #binding-cells = <0>;
                 wait-ms = <30>;
                 tap-ms = <40>;
-                bindings = <&kp LCTRL &kp LALT>;
+                bindings = <&macro_press &kp LCTRL &kp LALT>;
           };
 
           displayt: displayt {
