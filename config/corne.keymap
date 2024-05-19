@@ -9,6 +9,59 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+     behaviors {
+      weak: weak {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WEAK";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <125>;
+            quick-tap-ms = <230>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        delete {
+            bindings = <&kp DEL>;
+            key-positions = <15 16>;
+        };
+
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <26 27>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <27 28>;
+        };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <26 28>;
+        };
+
+        select-all {
+            bindings = <&kp LG(A)>;
+            key-positions = <12 13>;
+        };
+
+        scroll-up {
+            bindings = <&kp C_AC_SCROLL_UP>;
+            key-positions = <7 10>;
+        };
+
+        scroll-down {
+            bindings = <&kp C_AC_SCROLL_DOWN>;
+            key-positions = <31 34>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
