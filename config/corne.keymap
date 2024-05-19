@@ -30,7 +30,13 @@
                 require-prior-idle-ms = <125>;
                 quick-tap-ms = <230>;
           };
-
+          
+          cap_dance: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&kp CAPSLOCK>;
+          };
           //  rektangle: rektangle {
           //        compatible = "zmk,binding-macro";
           //        #binding-cells = <0>;
@@ -74,13 +80,13 @@
             compatible = "zmk,combos";
 
             display_move {
-                bindings = <&kp LG(LC(LALT))>;
-                key-positions = < 36 37 38 >;
+                bindings = <&kp LG(LC(LA(LEFT)))>;
+                key-positions = < 24 25 26 >;
             };
         
             cycle_app {
-                bindings = <&kp LC(LALT) LG(GRAVE)>;
-                key-positions = < 36 37 >;
+                bindings = <&mt LC(LALT) LG(GRAVE)>;
+                key-positions = < 36 12>;
             };
         
             escape {
@@ -137,7 +143,7 @@
  		 &kp LCTRL 		 &kp A 		   &kp S 		   &kp D 		   &kp F 		   &kp G   	              &kp H 		   &kp J  		   &kp K     		&kp L   		&kp SEMI 	 &kp SQT
 // --------------------------------------------------------------------------          -----------------------------------------------------------------------------
 // |  SHFT 			|   Z  			|   X  			|   C  			|   V  			|   B  			|          |   N  			|   M   			|   ,  			|   .  			|   /  			|  ESC  			| 
- 		 &kp LSHFT 		 &kp Z 		   &kp X 		   &kp C 		   &kp V 		   &kp B   	              &kp N 		   &kp M  		   &kp COMMA 		&kp DOT 		&kp FSLH 	 &kp ESC
+ 		 &cap_dance 0 		 &kp Z 		   &kp X 		   &kp C 		   &kp V 		   &kp B   	              &kp N 		   &kp M  		   &kp COMMA 		&kp DOT 		&kp FSLH 	 &kp ESC
 // --------------------------------------------------------------------------          -----------------------------------------------------------------------------
 //                    			            |  GUI 			|  LWR 			|  SPC 			|          |  ENT 			|  RSE  			|  ALT 			| 
                   		                     &kp LGUI    &mo 1 		   &kp SPACE              &kp RET     &mo 2 		     &td_mt
@@ -154,7 +160,7 @@
       &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                &kp LEFT 	 &kp DOWN 	 &kp UP 		 &kp RIGHT    &trans      &trans
 // ----------------------------------------------------------------------------------------------          ---------------------------------------------------------------------------
 // |  SHFT 			|      		    	|      		    	|         			|      	    		|      	    		|          |      			|      			|      			|      			|      			|       			| 
-   		&kp LSHFT    &trans          &trans          &trans          &trans          &trans                      &trans     &trans      &trans      &trans       &trans      &trans
+   		&cap_dance 0    &trans          &trans          &trans          &trans          &trans                      &trans     &trans      &trans      &trans       &trans      &trans
 // ----------------------------------------------------------------------------------------------          ---------------------------------------------------------------------------
 //                                			        |  GUI 			    |      			    |  SPC 			    |          |  ENT 			|      			|  ALT 			| 
                                     		           &kp LGUI        &trans       	 &kp SPACE                   &kp RET    &trans      &td_mt
@@ -172,7 +178,7 @@
    		&kp LCTRL       &trans        &trans       &trans        &trans        &trans                   &kp MINUS 		&kp EQUAL 		&kp LBKT  		&kp RBKT 		 &kp BSLH 		 &kp PLUS
 // --------------------------------------------------------------------------------------          ---------------------------------------------------------------------------------------
 // |  SHFT 			  |      		  	|      			  |      			  |      			  |      			  |          |   _  			  |   ~  			  |   {  			  |   }  			  |  "|"        |   ~   			  | 
-   		&kp LSHFT       &trans        &trans       &trans        &trans        &trans                   &kp UNDER 		&kp TILDE  		&kp LBRC  		&kp RBRC 		 &kp PIPE 		 &kp TILDE
+   		&cap_dance 0       &trans        &trans       &trans        &trans        &trans                   &kp UNDER 		&kp TILDE  		&kp LBRC  		&kp RBRC 		 &kp PIPE 		 &kp TILDE
 // --------------------------------------------------------------------------------------          ---------------------------------------------------------------------------------------
 //                                 			      |  GUI 			  |       			|  SPC 			  |          |  ENT 			  |      			  |  ALT 			  | 
                              		                 &kp LGUI      &trans   		 &kp SPACE                &kp RET      &trans    		&td_mt
@@ -190,7 +196,7 @@
       &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4               &kp C_BRIGHTNESS_INC 	   &kp DOWN 	 &kp UP 		 &kp RIGHT    &trans      &sys_reset
 // ----------------------------------------------------------------------------------------------          ---------------------------------------------------------------------------
 // |  SHFT 			|      		    	|      		    	|         			|      	    		|      	    		|          |      			|      			|      			|      			|      			|       			| 
-   		&kp LSHFT    &trans          &trans          &trans          &trans          &trans                      &trans     &trans      &trans      &trans       &trans      &trans
+   		&cap_dance 0    &trans          &trans          &trans          &trans          &trans                      &trans     &trans      &trans      &trans       &trans      &trans
 // ----------------------------------------------------------------------------------------------          ---------------------------------------------------------------------------
 //                                			        |  GUI 			    |      			    |  SPC 			    |          |  ENT 			|      			|  ALT 			| 
                                     		           &kp LGUI        &trans       	 &kp SPACE                   &kp RET    &trans      &td_mt
