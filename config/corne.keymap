@@ -87,6 +87,41 @@
             };
         };
 
+        conditional_layers {
+               compatible = "zmk,conditional-layers";
+               tri_layer {
+                   if-layers = <1 2>;
+                   then-layer = <3>;
+               };
+        };
+
+        behaviors {
+               weak: weak {
+                     compatible = "zmk,behavior-hold-tap";
+                     bindings = <&kp>, <&kp>;
+ 
+                     #binding-cells = <2>;
+                     tapping-term-ms = <230>;
+                     flavor = "tap-preferred";
+                     require-prior-idle-ms = <125>;
+                     quick-tap-ms = <230>;
+               };
+               
+               cap_dance: tap_dance_0 {
+                 compatible = "zmk,behavior-tap-dance";
+                 #binding-cells = <0>;
+                 tapping-term-ms = <200>;
+                 bindings = <&kp LSHFT>, <&kp CAPSLOCK>;
+               };
+
+               td_mt: tap_dance_mod_tap {
+                 compatible = "zmk,behavior-tap-dance";
+                 #binding-cells = <0>;
+                 tapping-term-ms = <200>;
+                 bindings = <&mt RSHIFT CAPSLOCK>, <&kp RCTRL>;
+               };
+        };
+        
         combos {
             compatible = "zmk,combos";
 
