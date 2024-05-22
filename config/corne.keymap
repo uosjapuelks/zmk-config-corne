@@ -81,11 +81,11 @@
             wrtie_quit {
                 bindings = <&writequit >;
                 key-positions = < 2 22>;
-            }
+            };
             write {
                 bindings = <&write>;
                 key-positions = < 0 1 2>;
-            }
+            };
 
             display_move {
                 bindings = <&kp LG(LC(LA(LEFT)))>;
