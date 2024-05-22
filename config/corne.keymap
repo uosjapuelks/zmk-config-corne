@@ -128,7 +128,7 @@
             };
         
             vol-down {
-                bindings = <&kp C_VOL_DOWN>;
+                bindings = <&kp C_VOL_DN>;
                 key-positions = <22 23>;
             };
         
