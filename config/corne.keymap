@@ -34,15 +34,15 @@
                 default_layer {
                         bindings = <
  		&kp TAB   	 &kp Q  &kp W  &kp E  &kp R  &kp T     &kp Y  &kp U  &kp I     	&kp O   	&kp P    	 &kp BSPC
- 		&kp LCTRL 	 &kp A  &kp S  &kp D  &kp F  &kp G     &kp H  &kp J  &kp K     	&kp L   	&kp SEMI 	 &kp RET
- 		&cap_dance   &kp Z  &kp X  &kp C  &kp V  &kp B     &kp N  &kp M  &kp COMMA 	&kp DOT 	&kp FSLH 	 &kp SQT
-                  		  &kp LGUI  &mo 1  &kp SPACE     &kp LSHFT  &mo 2  &td_mt
+ 		&kp LCTRL 	 &kp A  &kp S  &kp D  &kp F  &kp G     &kp H  &kp J  &kp K     	&kp L   	&kp SEMI 	 &kp SQT
+ 		&cap_dance   &kp Z  &kp X  &kp C  &kp V  &kp B     &kp N  &kp M  &kp COMMA 	&kp DOT 	&kp FSLH 	 &kp RSHIFT
+                  		  &kp LGUI  &mo 1  &kp SPACE     &kp RET  &mo 2  &td_mt
                         >;
                 };
                 lower_layer {
                         bindings = <
    	&trans    &kp N1    &kp N2   &kp N3   &kp N4   &kp N5        &kp N6   	 &kp N7   	 &kp N8 		&kp N9    	&kp N0 		 &trans
-    &trans    &trans    &trans   &trans   &trans   &trans        &kp MINUS 	 &kp EQUAL 	 &kp LBKT  	&kp RBKT 		&kp BSLH 	 &kp PLUS
+    &trans    &trans    &trans   &trans   &SCAT   &trans        &kp MINUS 	 &kp EQUAL 	 &kp LBKT  	&kp RBKT 		&kp BSLH 	 &kp PLUS
    	&trans    &trans    &trans   &trans   &trans   &trans        &kp UNDER 	 &kp TILDE   &kp LBRC  	&kp RBRC 		&kp PIPE 	 &kp TILDE        
                                  &trans   &trans 	 &trans        &trans    &trans  &trans
                         >;
@@ -52,8 +52,8 @@
                         bindings = <
    	&trans    &kp EXCL   &kp AT    &kp HASH   &kp DLLR   &kp PRCNT       &kp CARET   &kp AMPS  	 &kp ASTRK 	 &kp LPAR 		&kp RPAR 		&trans
    	&trans    &trans     &trans    &trans     &trans     &trans          &kp LEFT    &kp DOWN 	 &kp UP 		 &kp RIGHT    &trans      &trans
-   	&trans    &trans     &trans    &trans     &trans     &trans          &trans      &trans      &trans      &trans       &trans      &trans
-                             	  &trans      &trans   		 &ctrlb          &trans  &trans   &trans
+   	&trans    &trans     &trans    &trans     &trans     &trans          &kp C_PREV  &kp C_PP    &kp C_NEXT  &trans       &trans      &trans
+                             	  &RALT      &trans   		 &trans          &trans  &trans   &trans
                         >;
                 };
 
@@ -80,13 +80,10 @@
                 bindings
                     = <&macro_tap &kp COLON &kp W &kp RET>;
             };
-            ctrlb: ctrlb {
+            SCAT: SCAT {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = 
-                    <&macro_press   &kp LCTRL &kp B>,
-                    <&macro_release &kp LCTRL &kp B>;
+                bindings = <&kp LG(LS(SPACE))>;
             };
         };
 
@@ -136,6 +133,10 @@
                 bindings = <&writequit>;
                 key-positions = < 0 1 2>;
             };
+            quit {
+                bindings = <&writequit>;
+                key-positions = < 1 22>;
+            };
 
             display_move {
                 bindings = <&kp LG(LC(LA(LEFT)))>;
@@ -182,18 +183,18 @@
                 key-positions = <22 23>;
             };
         
-            select-all {
-                bindings = <&kp LG(A)>;
-                key-positions = <12 13>;
+            vol-mute {
+                bindings = <&kp C_MUTE>;
+                key-positions = <22 23>;
             };
         
             scroll-up {
-                bindings = <&kp UP>;
+                bindings = <&kp C_AC_SCROLL_UP>;
                 key-positions = <7 10>;
             };
         
             scroll-down {
-                bindings = <&kp DOWN>;
+                bindings = <&kp C_AC_SCROLL_DOWN>;
                 key-positions = <31 34>;
             };
         };
