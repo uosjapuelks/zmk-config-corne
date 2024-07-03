@@ -53,7 +53,7 @@
    	&trans    &kp EXCL   &kp AT    &kp HASH   &kp DLLR   &kp PRCNT       &kp CARET   &kp AMPS  	 &kp ASTRK 	 &kp LPAR 		&kp RPAR 		&trans
    	&trans    &trans     &trans    &trans     &trans     &trans          &kp LEFT    &kp DOWN 	 &kp UP 		 &kp RIGHT    &trans      &trans
    	&trans    &trans     &trans    &trans     &trans     &trans          &kp C_PREV  &kp C_PP    &kp C_NEXT  &trans       &trans      &trans
-                             	  &RALT      &trans   		 &trans          &trans  &trans   &trans
+                             	  &kp RALT      &trans   		 &trans          &trans  &trans   &trans
                         >;
                 };
 
