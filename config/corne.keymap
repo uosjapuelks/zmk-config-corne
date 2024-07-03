@@ -80,6 +80,12 @@
                 bindings
                     = <&macro_tap &kp COLON &kp W &kp RET>;
             };
+            write: write {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp COLON &kp Q &kp RET>;
+            };
             SCAT: SCAT {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -134,7 +140,7 @@
                 key-positions = < 0 1 2>;
             };
             quit {
-                bindings = <&writequit>;
+                bindings = <&quit>;
                 key-positions = < 1 22>;
             };
 
@@ -185,7 +191,7 @@
         
             vol-mute {
                 bindings = <&kp C_MUTE>;
-                key-positions = <22 23>;
+                key-positions = <34 35>;
             };
         
             scroll-up {
@@ -200,5 +206,3 @@
         };
 
 };
-
-
