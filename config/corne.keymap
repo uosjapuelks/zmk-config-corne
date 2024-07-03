@@ -80,7 +80,7 @@
                 bindings
                     = <&macro_tap &kp COLON &kp W &kp RET>;
             };
-            write: write {
+            quit: quit {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
